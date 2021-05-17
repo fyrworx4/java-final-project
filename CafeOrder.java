@@ -72,15 +72,15 @@ public class CafeOrder {
         }
     }
 
-    public void addPrice(Double foodItemPrice) {
-        price += foodItemPrice;
-    }
-
     public void setName(String userName) {
         customerName = userName;
     }
 
-    // Method to print out the order
+    public void addPrice(Double foodItemPrice) {
+        price += foodItemPrice;
+    }
+
+    // Create special strings for coffee and food orders
     public void coffeeStringOutput() {
         if(coffeeCounts.get("Espresso") > 0) {
             coffeeString += "Espresso(" + coffeeCounts.get("Espresso") + "), ";

@@ -47,6 +47,7 @@ public class CafeApp {
         printMealType();
 
         while(breakfastOrLunchSelected != true) {
+
             // Input validation
             try {
                 breakfastOrLunch = scnr.nextInt();
@@ -85,6 +86,7 @@ public class CafeApp {
         boolean coffeeSelected = false;
 
         while(coffeeSelected != true) {
+
             // Print out menu
             printCoffeeMenu();
 
@@ -126,7 +128,7 @@ public class CafeApp {
                 case 5:
                     coffeeSelected = true;
                     break;
-            }          
+            }
         }
 
         ////////////////////////////////////
@@ -138,6 +140,7 @@ public class CafeApp {
         boolean foodSelected = false;
 
         while(foodSelected != true) {
+
             // Print out menu
             printFoodMenu();
 
@@ -213,16 +216,17 @@ public class CafeApp {
             customerNameSubmitted = true;
         }
         
-        // Assign coffeeCount and foodCount into cafeOrder
-
-        // Print All
+        // String outputs
         cafeOrder.coffeeStringOutput();
         cafeOrder.foodStringOutput();
+
+        // Print all and write to output
         cafeOrder.printAll();
 
         // Write to output
         cafeOrder.writeToOutput();
 
+        // Close scanner to save memory
         scnr.close();
     }
 }
