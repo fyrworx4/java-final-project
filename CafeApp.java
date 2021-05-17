@@ -52,13 +52,13 @@ public class CafeApp {
             try {
                 breakfastOrLunch = scnr.nextInt();
                 while ((breakfastOrLunch < 1) || (breakfastOrLunch > 2)) {
-                    System.out.println("Error! Number must be greater than 0.");
+                    System.out.println("Error! Number must be within the specified range.");
                     System.out.print("Select Breakfast or Lunch [1, 2]: ");
                     breakfastOrLunch = scnr.nextInt();
                 }
             }
             catch(InputMismatchException e) {
-                System.out.println("Error! Number must be greater than 0.");
+                System.out.println("Error! Input must be an integer.");
                 System.out.print("Select Breakfast or Lunch [1, 2]: ");
                 scnr.next();
                 continue;
@@ -85,22 +85,21 @@ public class CafeApp {
         int coffeeSelection = 0;
         boolean coffeeSelected = false;
 
+        // Print out menu
+        printCoffeeMenu();
+
         while(coffeeSelected != true) {
-
-            // Print out menu
-            printCoffeeMenu();
-
             // Input validation
             try {
                 coffeeSelection = scnr.nextInt();
                 while ((coffeeSelection < 1) || (coffeeSelection > 5)) {
-                    System.out.println("Error! Number must be greater than 0.");
+                    System.out.println("Error! Number must be within the specified range.");
                     System.out.print("Select a coffee [1, 5]: ");
                     coffeeSelection = scnr.nextInt();
                 }
             }
             catch(InputMismatchException e) {
-                System.out.println("Error! Number must be greater than 0.");
+                System.out.println("Error! Input must be an integer.");
                 System.out.print("Select a coffee [1, 5]: ");
                 scnr.next();
                 continue;
@@ -112,18 +111,22 @@ public class CafeApp {
                 case 1:
                     cafeOrder.addCoffeeToOrder(1);
                     cafeOrder.addPrice(3.5);
+                    printCoffeeMenu();
                     break;
                 case 2:
                     cafeOrder.addCoffeeToOrder(2);
-                    cafeOrder.addPrice(3.5);                   
+                    cafeOrder.addPrice(3.5);
+                    printCoffeeMenu();                 
                     break;
                 case 3:
                     cafeOrder.addCoffeeToOrder(3);
                     cafeOrder.addPrice(5.0);
+                    printCoffeeMenu();
                     break;
                 case 4:
                     cafeOrder.addCoffeeToOrder(4);
                     cafeOrder.addPrice(3.0);
+                    printCoffeeMenu();
                     break;
                 case 5:
                     coffeeSelected = true;
@@ -139,22 +142,22 @@ public class CafeApp {
         int foodSelection = 0;
         boolean foodSelected = false;
 
-        while(foodSelected != true) {
+        // Print out menu
+        printFoodMenu();
 
-            // Print out menu
-            printFoodMenu();
+        while(foodSelected != true) {
 
             // Input validation
             try {
                 foodSelection = scnr.nextInt();
                 while ((foodSelection < 1) || (foodSelection > 6)) {
-                    System.out.println("Error! Number must be greater than 0.");
+                    System.out.println("Error! Number must be within the specified range.");
                     System.out.print("Select Food [1, 6]: ");
                     foodSelection = scnr.nextInt();
                 }
             }
             catch (InputMismatchException e) {
-                System.out.println("Error! Number must be greater than 0.");
+                System.out.println("Error! Input must be an integer.");
                 System.out.print("Select Food [1, 6]: ");
                 scnr.next();
                 continue;
@@ -165,22 +168,27 @@ public class CafeApp {
                 case 1:
                     cafeOrder.addFoodToOrder(1);
                     cafeOrder.addPrice(10.0);
+                    printFoodMenu();
                     break;
                 case 2:
                     cafeOrder.addFoodToOrder(2);
                     cafeOrder.addPrice(10.0);
+                    printFoodMenu();
                     break;
                 case 3:
                     cafeOrder.addFoodToOrder(3);
                     cafeOrder.addPrice(12.0);
+                    printFoodMenu();
                     break;
                 case 4:
                     cafeOrder.addFoodToOrder(4);
                     cafeOrder.addPrice(8.0);
+                    printFoodMenu();
                     break;
                 case 5:
                     cafeOrder.addFoodToOrder(5);
                     cafeOrder.addPrice(8.0);
+                    printFoodMenu();
                     break;
                 case 6:
                     foodSelected = true;
