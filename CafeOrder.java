@@ -126,7 +126,7 @@ public class CafeOrder {
     // Method to append order to output.txt
     public void writeToOutput() {
         try(
-            FileWriter fw = new FileWriter("output.txt", true);
+            FileWriter fw = new FileWriter("order.txt", true);
             BufferedWriter bw = new BufferedWriter(fw);
             PrintWriter out = new PrintWriter(bw)
             )
